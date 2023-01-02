@@ -9,6 +9,9 @@ namespace netContactBookApplication.Controllers
 {
     public class HomeController : Controller
     {
+
+        
+
         // GET: Home
         [HttpGet]
         public ActionResult Index()
@@ -29,5 +32,7 @@ namespace netContactBookApplication.Controllers
 
             return View();
         }
+
+
     }
 }
