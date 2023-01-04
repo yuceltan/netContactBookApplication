@@ -9,10 +9,7 @@ namespace netContactBookApplication.Controllers
 {
     public class HomeController : Controller
     {
-
-        
-
-        // GET: Home
+         // GET: Home
         [HttpGet]
         public ActionResult Index()
         {
@@ -27,14 +24,7 @@ namespace netContactBookApplication.Controllers
                 db.ContactRecords.Add(cot);
                 db.SaveChanges();
             }
-
-
-
             return View();
         }
-
-        
-        
-
     }
 }
