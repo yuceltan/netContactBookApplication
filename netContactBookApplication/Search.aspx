@@ -22,7 +22,7 @@
                 <asp:BoundField DataField="BirthDate" HeaderText="BirthDate" SortExpression="BirthDate" />
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:yuceltandbConnectionString %>" SelectCommand="SELECT * FROM [ContactRecords] WHERE ([Name] = @Name)">
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:yuceltandbConnectionString %>" SelectCommand="SELECT * FROM [ContactDB] WHERE ([Name] = @Name)">
             <SelectParameters>
                 <asp:ControlParameter ControlID="TextBox1" Name="Name" PropertyName="Text" Type="String" />
             </SelectParameters>
@@ -41,7 +41,7 @@
                 <asp:BoundField DataField="BirthDate" HeaderText="BirthDate" SortExpression="BirthDate" />
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSourceSurname" runat="server" ConnectionString="<%$ ConnectionStrings:yuceltandbConnectionString %>" SelectCommand="SELECT * FROM [ContactRecords] WHERE ([Surname] = @Surname)">
+        <asp:SqlDataSource ID="SqlDataSourceSurname" runat="server" ConnectionString="<%$ ConnectionStrings:yuceltandbConnectionString %>" SelectCommand="SELECT * FROM [ContactDB] WHERE ([Surname] = @Surname)">
             <SelectParameters>
                 <asp:ControlParameter ControlID="TextBox2" Name="Surname" PropertyName="Text" Type="String" />
             </SelectParameters>
@@ -62,7 +62,7 @@
                 <asp:BoundField DataField="BirthDate" HeaderText="BirthDate" SortExpression="BirthDate" />
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSourceNumber" runat="server" ConnectionString="<%$ ConnectionStrings:yuceltandbConnectionString %>" SelectCommand="SELECT * FROM [ContactRecords] WHERE ([Number] = @Number)">
+        <asp:SqlDataSource ID="SqlDataSourceNumber" runat="server" ConnectionString="<%$ ConnectionStrings:yuceltandbConnectionString %>" SelectCommand="SELECT * FROM [ContactDB] WHERE ([Number] = @Number)">
             <SelectParameters>
                 <asp:ControlParameter ControlID="TextBox3" Name="Number" PropertyName="Text" Type="Int32" />
             </SelectParameters>
@@ -85,7 +85,7 @@
                 <asp:BoundField DataField="BirthDate" HeaderText="BirthDate" SortExpression="BirthDate" />
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSourceEmail" runat="server" ConnectionString="<%$ ConnectionStrings:yuceltandbConnectionString %>" SelectCommand="SELECT * FROM [ContactRecords] WHERE ([Email] = @Email)">
+        <asp:SqlDataSource ID="SqlDataSourceEmail" runat="server" ConnectionString="<%$ ConnectionStrings:yuceltandbConnectionString %>" SelectCommand="SELECT * FROM [ContactDB] WHERE ([Email] = @Email)">
             <SelectParameters>
                 <asp:ControlParameter ControlID="TextBox4" Name="Email" PropertyName="Text" Type="String" />
             </SelectParameters>
@@ -107,9 +107,9 @@
                     <asp:BoundField DataField="BirthDate" HeaderText="BirthDate" SortExpression="BirthDate" />
                 </Columns>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSourceBirth" runat="server" ConnectionString="<%$ ConnectionStrings:yuceltandbConnectionString %>" SelectCommand="SELECT * FROM [ContactRecords] WHERE ([BirthDate] = @BirthDate)">
+            <asp:SqlDataSource ID="SqlDataSourceBirth" runat="server" ConnectionString="<%$ ConnectionStrings:yuceltandbConnectionString %>" SelectCommand="SELECT * FROM [ContactDB] WHERE ([BirthDate] = @BirthDate)">
                 <SelectParameters>
-                    <asp:ControlParameter ControlID="TextBox5" Name="BirthDate" PropertyName="Text" Type="DateTime" />
+                    <asp:ControlParameter ControlID="TextBox5" Name="BirthDate" PropertyName="Text" DbType="Date" />
                 </SelectParameters>
             </asp:SqlDataSource>
         </p>

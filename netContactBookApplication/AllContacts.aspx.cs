@@ -20,7 +20,7 @@ namespace netContactBookApplication
 
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM ContactRecords", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM ContactDB", con);
             SqlDataReader rdr = cmd.ExecuteReader();
             GridView1.DataSource = rdr;
             GridView1.DataBind();
@@ -37,7 +37,7 @@ namespace netContactBookApplication
         {
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-O9VG8LB\SQLEXPRESS;Initial Catalog=yuceltandb;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework");
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from ContactRecords", con);
+            SqlCommand cmd = new SqlCommand("Select * from ContactDB", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -65,9 +65,9 @@ namespace netContactBookApplication
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-O9VG8LB\SQLEXPRESS;Initial Catalog=yuceltandb;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework");
 
             GridViewRow row = (GridViewRow)GridView1.Rows[e.RowIndex];
-            Label lbldeleteid = (Label)row.FindControl("lblID");
+           
             con.Open();
-            SqlCommand cmd = new SqlCommand("DELETE FROM ContactRecords (Name,Surname,Number,Email,BirthDate)");
+            SqlCommand cmd = new SqlCommand("DELETE FROM ContactDB WHERE ID = ID");
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
             con.Close();
