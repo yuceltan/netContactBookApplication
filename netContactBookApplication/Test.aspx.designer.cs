@@ -11,7 +11,7 @@ namespace netContactBookApplication
 {
 
 
-    public partial class AllContacts
+    public partial class Test
     {
 
         /// <summary>
