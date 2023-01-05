@@ -20,17 +20,10 @@ namespace netContactBookApplication
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-O9VG8LB\SQLEXPRESS;Initial Catalog=yuceltandb;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework");
-
-
-
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand("SELECT * FROM ContactDB", con);
-            SqlDataReader rdr = cmd.ExecuteReader();
-            GridView1.DataSource = rdr;
-            GridView1.DataBind();
-            con.Close();
+            if (!this.IsPostBack)
+            {
+                this.BindGrid();
+            }
 
 
         }
@@ -39,33 +32,6 @@ namespace netContactBookApplication
         {
 
         }
-        protected void gvbind()
-        {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-O9VG8LB\SQLEXPRESS;Initial Catalog=yuceltandb;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework");
-            con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from ContactDB", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            con.Close();
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
-            }
-            else
-            {
-                ds.Tables[0].Rows.Add(ds.Tables[0].NewRow());
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
-                int columncount = GridView1.Rows[0].Cells.Count;
-                GridView1.Rows[0].Cells.Clear();
-                GridView1.Rows[0].Cells.Add(new TableCell());
-                GridView1.Rows[0].Cells[0].ColumnSpan = columncount;
-                GridView1.Rows[0].Cells[0].Text = "No Records Found";
-            }
-        }
-
 
         protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
         {
@@ -84,18 +50,7 @@ namespace netContactBookApplication
             }
             this.BindGrid();
 
-
-
-
-
-
-
-
-
-
-
-
-
+            // MY OLD CODES
 
             /* GridViewRow row = ContactDB.SelectedRow;
              Delete.Text = row.Cells[1].Text;
