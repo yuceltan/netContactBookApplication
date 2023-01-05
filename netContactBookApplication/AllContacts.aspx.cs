@@ -92,11 +92,11 @@ namespace netContactBookApplication
         {
             GridViewRow row = GridView1.Rows[e.RowIndex];
             int ID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-            string Name = (row.Cells[2].Controls[0] as TextBox).Text;
-            string Surname = (row.Cells[3].Controls[0] as TextBox).Text;
-            int Number = int.Parse((row.Cells[4].Controls[0] as TextBox).Text);
-            string Email = (row.Cells[5].Controls[0] as TextBox).Text;
-            string BirthDate = (row.Cells[6].Controls[0] as TextBox).Text;
+            string Name = (row.Cells[3].Controls[0] as TextBox).Text;
+            string Surname = (row.Cells[4].Controls[0] as TextBox).Text;
+            int Number = int.Parse((row.Cells[5].Controls[0] as TextBox).Text);
+            string Email = (row.Cells[6].Controls[0] as TextBox).Text;
+            string BirthDate = (row.Cells[7].Controls[0] as TextBox).Text;
 
 
 
@@ -114,6 +114,7 @@ namespace netContactBookApplication
 
                     cmd.Connection = con;
                     con.Open();
+                    
                     cmd.ExecuteNonQuery();
                     con.Close();
                 }
@@ -135,6 +136,7 @@ namespace netContactBookApplication
                 (e.Row.Cells[0].Controls[2] as LinkButton).Attributes["onclick"] = "return confirm('Do you want to delete this row?');";
             }
         }
+        //contactMonth == currentMonth && contactDay >= currentDay && contactDay < currentDay + 7
 
         private void BindGrid()
         {
@@ -158,5 +160,7 @@ namespace netContactBookApplication
             }
         }
 
+       
+        
+        }
     }
-}

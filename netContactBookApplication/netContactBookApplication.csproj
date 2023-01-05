@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AllContacts.aspx" />
+    <Content Include="BirthdayCurrentWeek.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
@@ -177,6 +178,13 @@
       <DependentUpon>AllContacts.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BirthdayCurrentWeek.aspx.cs">
+      <DependentUpon>BirthdayCurrentWeek.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BirthdayCurrentWeek.aspx.designer.cs">
+      <DependentUpon>BirthdayCurrentWeek.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
