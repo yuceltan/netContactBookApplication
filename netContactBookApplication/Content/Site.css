@@ -15,4 +15,8 @@ select,
 textarea {
     max-width: 280px;
 }
-
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: red;
+}

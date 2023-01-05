@@ -15,7 +15,7 @@
                     
                 </Columns>
         </asp:GridView>
-        <asp:Button ID="CurrentBirth" runat="server" Height="94px" OnClick="CurrentBirth_Click" Text="Birthdays in the current week" />
+       
     </form>
 </body>
 </html>
