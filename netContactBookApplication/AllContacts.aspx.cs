@@ -92,12 +92,12 @@ namespace netContactBookApplication
         {
             GridViewRow row = GridView1.Rows[e.RowIndex];
             int ID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-            string Name = (row.Cells[3].Controls[0] as TextBox).Text;
-            string Surname = (row.Cells[4].Controls[0] as TextBox).Text;
-            int Number = int.Parse((row.Cells[5].Controls[0] as TextBox).Text);
-            string Email = (row.Cells[6].Controls[0] as TextBox).Text;
-            string BirthDate = (row.Cells[7].Controls[0] as TextBox).Text;
-
+            string Name = (row.Cells[2].Controls[0] as TextBox).Text;
+            string Surname = (row.Cells[3].Controls[0] as TextBox).Text;
+            int Number = int.Parse((row.Cells[4].Controls[0] as TextBox).Text);
+            string Email = (row.Cells[5].Controls[0] as TextBox).Text;
+            string BirthDate = (row.Cells[6].Controls[0] as TextBox).Text;
+            // note for myself: if you add button or hyperlink do not forget to change number of cell numbers from method!!
 
 
             string constr = ConfigurationManager.ConnectionStrings["yuceltandbConnectionString"].ConnectionString;

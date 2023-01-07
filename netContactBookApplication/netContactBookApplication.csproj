@@ -148,6 +148,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>recordsContact.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Logo_Akademia_pion_wersjapodst_CMYK_ENG.jpg" />
     <Content Include="Models\recordsContact.edmx.diagram">
       <DependentUpon>recordsContact.edmx</DependentUpon>
     </Content>
@@ -167,6 +168,7 @@
     <Content Include="Scripts\jquery-ui-1.13.2.js" />
     <Content Include="Scripts\jquery-ui-1.13.2.min.js" />
     <Content Include="Search.aspx" />
+    <Content Include="Test.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -215,6 +217,13 @@
     </Compile>
     <Compile Include="Search.aspx.designer.cs">
       <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
