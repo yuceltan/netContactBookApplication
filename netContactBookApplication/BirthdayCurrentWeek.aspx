@@ -54,6 +54,7 @@
             $("a.selected").closest(".dropdown-toggle").addClass("active");
         });
     </script>
+    <h2 style="text-align: left">Birthdays in current week</h2>
     <form id="form1" runat="server">
         <div>
         </div>

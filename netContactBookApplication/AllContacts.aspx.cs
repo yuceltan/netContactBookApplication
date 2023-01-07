@@ -136,8 +136,7 @@ namespace netContactBookApplication
                 (e.Row.Cells[0].Controls[2] as LinkButton).Attributes["onclick"] = "return confirm('Do you want to delete this row?');";
             }
         }
-        //contactMonth == currentMonth && contactDay >= currentDay && contactDay < currentDay + 7
-
+        // Created by Yüceltan Ebiri;  github.com/yuceltan
         private void BindGrid()
         {
             string constr = ConfigurationManager.ConnectionStrings["yuceltandbConnectionString"].ConnectionString;

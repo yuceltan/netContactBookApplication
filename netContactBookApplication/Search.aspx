@@ -54,6 +54,7 @@
             $("a.selected").closest(".dropdown-toggle").addClass("active");
         });
     </script>
+    <h2 style="text-align: left">Search a contact</h2>
     <form id="form1" runat="server">
         <div>
             Search Contact Name:<asp:TextBox ID="TextBox1" runat="server" Width="163px"></asp:TextBox>
