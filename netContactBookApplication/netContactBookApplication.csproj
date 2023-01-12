@@ -169,6 +169,7 @@
     <Content Include="Scripts\jquery-ui-1.13.2.min.js" />
     <Content Include="Search.aspx" />
     <Content Include="searchadv.aspx" />
+    <Content Include="searchtwo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -224,6 +225,13 @@
     </Compile>
     <Compile Include="searchadv.aspx.designer.cs">
       <DependentUpon>searchadv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="searchtwo.aspx.cs">
+      <DependentUpon>searchtwo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="searchtwo.aspx.designer.cs">
+      <DependentUpon>searchtwo.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

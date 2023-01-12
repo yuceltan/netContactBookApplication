@@ -27,7 +27,7 @@
                         <li><a href="AllContacts.aspx">Contacts</a></li>
                         <li>
                             <a class="popout" href="#">Features</a><ul class="level2 dropdown-menu">
-                                <li><a class="" href="Search.aspx">Search Contact</a></li>
+                                <li><a class="" href="searchadv.aspx">Search Contact</a></li>
                                 <li><a class="" href="BirthdayCurrentWeek.aspx">Birthdays in current week</a></li>
                             </ul>
                         </li>
