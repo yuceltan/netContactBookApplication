@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="searchadv.aspx.cs" Inherits="netContactBookApplication.searchadv" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="birthdayajax.aspx.cs" Inherits="netContactBookApplication.birthdayajax" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body>
-    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'
+     <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'
           media="screen" />
     <div class="navbar navbar-default">
         <div class="container-fluid">
@@ -54,22 +54,32 @@
             $("a.selected").closest(".dropdown-toggle").addClass("active");
         });
     </script>
-    <h2 style="text-align: left">Search a contact</h2>
+    <h2 style="text-align: left">Birthdays in current week</h2>
+
     <form id="form1" runat="server">
         <div>
-            <asp:TextBox ID="txtSearch" runat="server" OnTextChanged="txtSearch_TextChanged" />
-<asp:Button Text="Search" runat="server" OnClick="Search" />
-<hr />
-<asp:GridView ID="gridview1" runat="server" AutoGenerateColumns="false" AllowPaging="true" OnRowDataBound="OnRowDataBound" OnPageIndexChanging="OnPageIndexChanging">
-<Columns>
-  <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <asp:Label ID="lblTime" runat="server" />
+                <br />
+                <br />
+                <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="ID">
+                    <Columns>
+                    <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
                 <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                 <asp:BoundField DataField="Surname" HeaderText="Surname" SortExpression="Surname" />
                 <asp:BoundField DataField="Number" HeaderText="Number" SortExpression="Number" />
                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                 <asp:BoundField DataField="BirthDate" HeaderText="BirthDate" SortExpression="BirthDate" />
-</Columns>
-</asp:GridView>
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:yuceltandbConnectionString %>"
+                    SelectCommand="SELECT * FROM ContactDB WHERE datepart(iso_week,current_timestamp)=datepart(iso_week,dateadd(year,year(current_timestamp)-year(BirthDate),BirthDate))"></asp:SqlDataSource>
+                <asp:Timer ID="Timer1" runat="server" OnTick="TimerTick" Interval="1000" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
         </div>
     </form>
 </body>
